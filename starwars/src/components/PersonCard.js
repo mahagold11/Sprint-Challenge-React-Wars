@@ -33,11 +33,21 @@ const CardBorder = styled.div`
 
 `;
 
-const ChacterList = styled.div`
+const ChacterList = styled.ul`
     display: flex;
     align-items:center;
     color: black;
     font-size: 1rem;
+    list-style: none;
+    padding: 0;
+    
+    li {
+        margin-right: 15px;
+
+    }
+    li:last-child {
+        margin-right: 0;
+    }
 `;
 
 
@@ -51,11 +61,12 @@ export const PersonCard = props => {
         <CardBorder type={props.person.gender}>
             <CharacterName>{props.person.name}</CharacterName>
             <ChacterList>
-                <ul>height: {props.person.height}</ul>
-                <ul>weight: {props.person.mass}</ul>
-                <ul>hair: {props.person.hair_color}</ul>
-                <ul>gender: {props.person.gender}</ul>
+                <li>height: {props.person.height}</li>
+                <li>weight: {props.person.mass}</li>
+                <li>hair: {props.person.hair_color}</li>
+                <li>gender: {props.person.gender}</li>
             </ChacterList>
+
         </CardBorder>
     );
 }
